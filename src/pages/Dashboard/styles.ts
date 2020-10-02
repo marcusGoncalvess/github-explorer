@@ -12,6 +12,10 @@ export const Title = styled.h1`
   line-height: 56px;
 
   margin-top: 80px;
+
+  @media (max-width: 500px) {
+    font-size: 25px;
+  }
 `;
 
 export const Form = styled.form<FormProps>`
@@ -19,6 +23,11 @@ export const Form = styled.form<FormProps>`
   max-width: 700px;
 
   display: flex;
+  @media (max-width: 500px) {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
 
   input {
     flex: 1;
@@ -30,6 +39,12 @@ export const Form = styled.form<FormProps>`
     border: 2px solid transparent;
     border-right: 0;
 
+    @media (max-width: 500px) {
+      flex: initial;
+      width: 95%;
+      border-radius: 5px;
+      margin-bottom: 10px;
+    }
     ${props =>
       props.hasError &&
       css`
@@ -50,6 +65,11 @@ export const Form = styled.form<FormProps>`
     color: #fff;
     font-weight: bold;
     transition: background-color 0.2s;
+
+    @media (max-width: 500px) {
+      border-radius: 5px;
+      width: 95%;
+    }
 
     &:hover {
       background: ${shade(0.2, '#04d361')};
@@ -98,12 +118,18 @@ export const Repositories = styled.div`
       strong {
         font-size: 20px;
         color: #3d3d4d;
+        @media (max-width: 500px) {
+          font-size: 16px;
+        }
       }
 
       p {
         font-size: 18px;
         color: #a8a8b3;
         margin-top: 4px;
+        @media (max-width: 500px) {
+          font-size: 12px;
+        }
       }
     }
     svg {
